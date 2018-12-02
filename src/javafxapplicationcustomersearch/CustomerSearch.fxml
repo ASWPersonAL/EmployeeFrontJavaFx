@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplicationcustomersearch.CustomerSearchController">
+<?import javafx.scene.control.cell.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="620.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplicationcustomersearch.CustomerSearchController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Button fx:id="buttonSearch" layoutX="514.0" layoutY="31.0" onAction="#handleSearchAction" text="Search">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <TextField fx:id="textFieldSearch" layoutX="51.0" layoutY="32.0" onAction="#handleSearchAction" prefHeight="27.0" prefWidth="373.0" />
+      <TableView fx:id="tableView" layoutX="51.0" layoutY="89.0" prefHeight="487.0" prefWidth="532.0">
+        <columns>
+          <TableColumn prefWidth="170.0" text="Name" >
+              <cellValueFactory>
+                  <PropertyValueFactory property="name" />
+              </cellValueFactory>
+              
+          </TableColumn>
+          <TableColumn prefWidth="190.0" text="Address" >
+              <cellValueFactory>
+                  <PropertyValueFactory property="addressline1" />
+              </cellValueFactory>
+              
+              </TableColumn>
+            <TableColumn prefWidth="210.0" text="Email" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="email"/>
+                </cellValueFactory>
+                
+            </TableColumn>
+        </columns>
+      </TableView>
     </children>
 </AnchorPane>
